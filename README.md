@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/rightmove/collectors.svg?branch=master)](https://travis-ci.org/rightmove/collectors) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/rightmove/collectors/master/LICENSE.txt)
+[![Build Status](https://travis-ci.org/rightmove/collectors.svg?branch=master)](https://travis-ci.org/rightmove/collectors) [![Release](https://jitpack.io/v/rightmove/collectors.svg)](https://jitpack.io/rightmove/collectors) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/rightmove/collectors/master/LICENSE.txt)
 
 # Collectors
 
