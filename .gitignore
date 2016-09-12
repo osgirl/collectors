@@ -1,0 +1,22 @@
+# Intellij project files
+*.iml
+*.ipr
+*.iws
+.idea/
+
+#Gradle
+.gradletasknamecache
+.gradle/
+build/
+bin/
+target/
+classes/
+
+# Java class files
+*.class
+
+# Log files
+*.log
+
+# mac
+*.DS_STORE

@@ -1,0 +1,67 @@
+allprojects {
+  group 'com.rightmove'
+  version '0.1.0'
+}
+
+subprojects {
+  apply plugin: 'java'
+  apply plugin: 'maven-publish'
+
+  sourceCompatibility = 1.8
+  targetCompatibility = 1.8
+
+  task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allJava
+  }
+
+  javadoc {
+    options.tags = ['apiNote', 'implNote']
+  }
+
+  task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+  }
+
+  publishing {
+    publications {
+      mavenJava(MavenPublication) {
+        artifactId jar.baseName
+
+        from components.java
+        artifact sourcesJar
+        artifact javadocJar
+
+        pom.withXml {
+          asNode().children().last() + {
+            resolveStrategy = Closure.DELEGATE_FIRST
+            url 'https://github.com/rightmove/collectors'
+            scm {
+              url 'https://github.com/rightmove/collectors'
+              connection 'https://github.com/rightmove/collectors.git'
+            }
+            licenses {
+              license {
+                name 'The Apache Software License, Version 2.0'
+                url 'http://www.apache.org/license/LICENSE-2.0.txt'
+                distribution 'repo'
+              }
+            }
+            organization {
+              name 'Rightmove'
+              url 'https://github.com/rightmove'
+            }
+            developers {
+              developer {
+                id 'jamessawle'
+                name 'James Sawle'
+                email 'james.sawle@rightmove.co.uk'
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
