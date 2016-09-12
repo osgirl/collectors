@@ -1,6 +1,6 @@
 allprojects {
-  group 'com.rightmove'
-  version '0.1.0'
+  group 'com.github.rightmove.collectors'
+  version '0.2.0'
 }
 
 subprojects {
